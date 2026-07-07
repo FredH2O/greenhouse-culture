@@ -667,6 +667,9 @@ function greenhouseculture_event_meta_box_callback($post)
                 <button type="button" id="event-gallery-btn" class="button">
                     Add Images / Videos
                 </button>
+                <p class="event-gallery-description">
+                    You can add up to 18 images/videos to the event gallery.
+                </p>
             </td>
         </tr>
         <tr>
@@ -867,7 +870,8 @@ function greenhouseculture_enqueue_glightbox()
     );
 }
 add_action('wp_enqueue_scripts', 'greenhouseculture_enqueue_glightbox');
-function greenhouseculture_ambassador_profile_rewrite() {
+function greenhouseculture_ambassador_profile_rewrite()
+{
     add_rewrite_rule(
         'ambassador/([^/]+)/?$',
         'index.php?ambassador_profile=$matches[1]',
@@ -876,7 +880,8 @@ function greenhouseculture_ambassador_profile_rewrite() {
 }
 add_action('init', 'greenhouseculture_ambassador_profile_rewrite');
 
-function greenhouseculture_ambassador_profile_template($template) {
+function greenhouseculture_ambassador_profile_template($template)
+{
     $slug = get_query_var('ambassador_profile');
     if (!$slug) {
         return $template;
@@ -891,7 +896,8 @@ function greenhouseculture_ambassador_profile_template($template) {
 }
 add_filter('template_include', 'greenhouseculture_ambassador_profile_template');
 
-function greenhouseculture_enqueue_ambassador_profile_styles() {
+function greenhouseculture_enqueue_ambassador_profile_styles()
+{
     if (!get_query_var('ambassador_profile')) {
         return;
     }

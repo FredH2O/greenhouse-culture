@@ -72,8 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (ids.length + selection.length > MAX_ITEMS) {
           alert(
-            `Maximum ${MAX_ITEMS} images/videos allowed. You can add ${MAX_ITEMS - ids.length} more.`
+            `You can add up to ${MAX_ITEMS} images/videos to the event gallery.`
           );
+          return;
         }
 
         selection.each(function (attachment) {
