@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
       .map(el => el.dataset.id)
       .filter(Boolean);
 
-    console.log('NEW ORDER:', ids);
     document.getElementById('event_gallery').value = ids.join(',');
   }
 
@@ -190,17 +189,4 @@ document.addEventListener('DOMContentLoaded', function () {
       const ids = getIds('event_supporters').filter(id => id !== removeId);
       document.getElementById('event_supporters').value = ids.join(',');
     });
-
-  // ===========================
-  // Debug — log on save
-  // ===========================
-
-  document.addEventListener('click', function (e) {
-    if (e.target.matches('#publish, #save-post')) {
-      console.log(
-        'Saving gallery value:',
-        document.getElementById('event_gallery').value
-      );
-    }
-  });
 });
