@@ -552,7 +552,7 @@ function greenhouseculture_register_events_post_type()
         'rewrite' => array('slug' => 'events'),
         'supports' => array('title', 'thumbnail', 'editor', 'excerpt'),
         'menu_icon' => 'dashicons-calendar-alt',
-        'show_in_rest' => false
+        'show_in_rest' => true
     ));
 }
 add_action('init', 'greenhouseculture_register_events_post_type');
