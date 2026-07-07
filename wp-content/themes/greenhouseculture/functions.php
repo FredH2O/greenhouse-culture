@@ -848,6 +848,11 @@ add_action('admin_enqueue_scripts', 'greenhouseculture_event_admin_scripts');
 
 function greenhouseculture_enqueue_glightbox()
 {
+
+    if (!is_singular('event')) {
+        return;
+    }
+
     wp_enqueue_style(
         'glightbox-css',
         'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
@@ -870,6 +875,7 @@ function greenhouseculture_enqueue_glightbox()
     );
 }
 add_action('wp_enqueue_scripts', 'greenhouseculture_enqueue_glightbox');
+
 function greenhouseculture_ambassador_profile_rewrite()
 {
     add_rewrite_rule(
